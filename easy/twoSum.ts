@@ -4,9 +4,9 @@
 
 // You can return the answer in any order.
 
-var twoSum = function (nums: number[], target: number) {
+var twoSum = function (nums: number[], target: number): number[] | null {
   //catch out of bounds input
-  if (nums.length < 2) return;
+  if (nums.length < 2) return null;
   //go through the array while summing values by indicies
 
   let result: number[] = [];
