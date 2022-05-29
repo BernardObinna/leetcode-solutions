@@ -6,17 +6,25 @@ var romanToInt = function (s: string): number | null {
   //     identify if the input has a valid value
   //     create an object with the roman numerals mapped to their integer values
   //     the object should state if it is a round figure and if it can act as a subtractive figure
-  // create a result variable initialized to zero to hold the result
+  //     create a result variable initialized to zero to hold the result
   //     loop through the input string
-  // have a skip variable to be incremented in the case of having a subtractive figure so that the next figure which has already been subtracted won't be considered
+  //     have a skip variable to be incremented in the case of having a subtractive figure so that the next figure which has already been subtracted won't be considered
   //      check if the next element is a round figure and if the current figure is a subtractive figure and that they are not equal
   //     if it is then subtract the current value from the next value and add it to the result variable
   //     if it isn't them add the curent value to the result value
   // return the result variable
 
   if (!s.length) return null;
+  interface ILegendEntry {
+    num: number;
+    isRound: boolean;
+    isSub: boolean;
+  }
+  interface ILegend {
+    [key: string]: ILegendEntry | undefined;
+  }
 
-  const legend: {} = {
+  const legend: ILegend = {
     I: { num: 1, isRound: false, isSub: true },
     V: { num: 5, isRound: true, isSub: false },
     X: { num: 10, isRound: true, isSub: true },
